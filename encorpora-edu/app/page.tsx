@@ -10,7 +10,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
       <motion.h1
         className="text-4xl font-bold text-center text-gray-900"
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
@@ -52,7 +52,7 @@ export default function HomePage() {
         </Card>
       </div>
       <footer className="mt-10 text-gray-500 text-sm">
-        © {new Date().getFullYear()} Encorpora, Inc. All Rights Reserved.
+        © {new Date().getFullYear()} Corpora Inc - All Rights Reserved.
       </footer>
     </div>
   );
