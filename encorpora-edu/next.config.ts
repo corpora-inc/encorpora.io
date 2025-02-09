@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig = {
   output: "export",
-  basePath: "/encorpora.io", // Change this to your actual repo name
-  assetPrefix: "/encorpora.io/",
+  basePath: "", // Change this to your actual repo name
+  assetPrefix: "",
 };
 
 // const nextConfig = {
