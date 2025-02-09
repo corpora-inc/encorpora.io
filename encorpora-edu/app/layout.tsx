@@ -21,7 +21,8 @@ export const metadata: Metadata = {
     description: "Revolutionizing education with AI. Explore free resources and cutting-edge learning tools.",
     images: [
       {
-        url: "/hexagon-logo.webp",
+        // url: "/hexagon-logo.webp",
+        url: "https://encorpora.io/hexagon-logo-optimized.webp",
         width: 1200,
         height: 630,
         alt: "Encorpora Logo",
