@@ -47,7 +47,12 @@ const HomePage: FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+    <motion.div
+      className="min-h-screen bg-gray-100 flex flex-col items-center p-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5, ease: "easeOut" }}
+    >
       <motion.h1
         className="text-5xl font-bold text-center text-gray-900"
         initial={{ opacity: 0, y: -20 }}
@@ -105,26 +110,39 @@ const HomePage: FC = () => {
       </div>
 
       {/* Consulting & Partnerships */}
-      <div className="mt-14 text-center max-w-3xl">
-        <h2 className="text-3xl font-semibold flex items-center justify-center gap-3">
-          <FaHandshake className="text-blue-500 text-4xl" /> Consulting & Partnerships
+
+      <motion.div
+        className="mt-12 w-full max-w-3xl px-6 text-center"
+        initial={{ opacity: 0, scale: 0, x: -1000 }}
+        animate={{ opacity: 1, scale: 1, x: 0 }}
+        transition={{ duration: 2, ease: "easeOut", delay: 2 }}
+      >
+        <h2 className="text-3xl font-semibold flex flex-col items-center">
+          <FaHandshake className="text-blue-500 text-4xl mb-2" />
+          Consulting &amp; Partnerships
         </h2>
         <p className="text-gray-700 mt-2">
           We offer <strong>custom books, AI-powered learning solutions, and tailored software development</strong>.
         </p>
         <p className="text-gray-600 mt-2">
-          Whether you&apos;re looking for <strong>a partnership in education technology</strong>, a <strong>fully customized learning experience</strong>,
-          or <strong>software development services</strong>, we can build something amazing together.
+          Whether you&apos;re looking for <strong>a partnership in education technology</strong> or a <strong>fully customized learning experience</strong>,
+          we can build something amazing together.
         </p>
-        <div className="mt-4 flex flex-col sm:flex-row justify-center gap-6 text-lg font-semibold">
+        <motion.div
+          className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-4 text-lg font-semibold"
+          initial={{ x: 5000, zIndex: -1000, opacity: 0, scale: 0 }}
+          animate={{ x: 0, zIndex: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 5, ease: "easeOut", delay: 1 }}
+        >
           <a href="mailto:team@encorpora.io" className="text-blue-600 hover:underline flex items-center gap-2">
             <FaEnvelope className="text-xl" /> team@encorpora.io
           </a>
           <a href="tel:+17703765331" className="text-blue-600 hover:underline flex items-center gap-2">
             <FaPhone className="text-xl" /> 770-376-5331
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
+
 
       {/* About Encorpora Section */}
       <div className="mt-10 flex flex-wrap justify-center gap-6">
@@ -207,7 +225,7 @@ const HomePage: FC = () => {
       <footer className="mt-16 text-gray-500 text-sm">
         © {new Date().getFullYear()} Corpora Inc - All Rights Reserved.
       </footer>
-    </div >
+    </motion.div>
   );
 };
 
