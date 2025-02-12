@@ -1,24 +1,47 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FaBook, FaRobot, FaSchool } from "react-icons/fa";
 
-export default function HomePage() {
+// Define book type
+interface Book {
+  title: string;
+  description: string;
+  link: string;
+}
+
+// Hardcoded featured books
+const featuredBooks: readonly Book[] = [
+  {
+    title: "2nd Grade Math",
+    description: "Foundational math concepts for second graders.",
+    link: "/books/2nd-grade-math.pdf"
+  },
+  {
+    title: "3rd Grade Math",
+    description: "Advancing arithmetic and problem-solving skills.",
+    link: "/books/3rd-grade-math.pdf"
+  },
+  {
+    title: "College Algebra CLEP",
+    description: "Prepare for the College Algebra CLEP exam.",
+    link: "/books/college-algebra-clep.pdf"
+  }
+];
+
+const HomePage: FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
-      <motion.h1
-        className="text-5xl font-bold text-center text-gray-900"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <h1 className="text-5xl font-bold text-center text-gray-900">
         Welcome to Encorpora
-      </motion.h1>
+      </h1>
       <p className="text-lg text-gray-700 text-center mt-4 max-w-2xl">
         The future of education is bright.
       </p>
+
+      {/* Top-Level Calls to Action */}
       <div className="mt-10 flex flex-wrap justify-center gap-6">
         <Card className="w-80 shadow-lg">
           <CardContent className="p-6 flex flex-col items-center text-center">
@@ -51,36 +74,52 @@ export default function HomePage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Featured Books */}
+
+
       <div className="mt-16 text-center max-w-3xl">
         <h2 className="text-3xl font-semibold">Featured Books</h2>
-        <p className="text-gray-700 mt-2">Explore our growing collection of free educational materials.</p>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <Card className="shadow-lg">
-            <CardContent className="p-6 text-center">
-              <h3 className="text-lg font-semibold">2nd Grade Math</h3>
-              <p className="text-gray-600">Foundational math concepts.</p>
-              <Button className="mt-4">Download</Button>
-            </CardContent>
-          </Card>
-          <Card className="shadow-lg">
-            <CardContent className="p-6 text-center">
-              <h3 className="text-lg font-semibold">3rd Grade Math</h3>
-              <p className="text-gray-600">Advancing arithmetic and problem-solving skills.</p>
-              <Button className="mt-4">Download</Button>
-            </CardContent>
-          </Card>
-          <Card className="shadow-lg">
-            <CardContent className="p-6 text-center">
-              <h3 className="text-lg font-semibold">College Algebra CLEP</h3>
-              <p className="text-gray-600">Prepare for the College Algebra CLEP exam.</p>
-              <Button className="mt-4">Download</Button>
-            </CardContent>
-          </Card>
-        </div>
+        <p className="text-gray-700 mt-2">
+          Explore our growing collection of free educational materials.
+        </p>
       </div>
+
+      <div className="mt-10 flex flex-wrap justify-center gap-6">
+        {featuredBooks.map((book: Book, i: number) => (
+          <Card key={i} className="w-80 shadow-lg">
+            <CardContent className="p-6 text-center">
+              <h3 className="text-lg font-semibold">{book.title}</h3>
+              <p className="text-gray-600">{book.description}</p>
+              <a
+                href={book.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="mt-4">Download</Button>
+              </a>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      {/* View All Books Link */}
+      <div className="mt-6">
+        <a
+          href="/books"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 font-semibold hover:underline"
+        >
+          View All Books →
+        </a>
+      </div>
+
+
       <footer className="mt-16 text-gray-500 text-sm">
         © {new Date().getFullYear()} Corpora Inc - All Rights Reserved.
       </footer>
-    </div>
+    </div >
   );
-}
+};
+
+export default HomePage;
