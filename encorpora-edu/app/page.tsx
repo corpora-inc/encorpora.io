@@ -6,9 +6,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   FaBook, FaRobot, FaSchool,
   FaUserGraduate, FaLightbulb, FaRocket,
+  FaHandshake, FaEnvelope, FaPhone,
 } from "react-icons/fa";
 // import {FaUserGraduate, FaLightbulb, FaRocket} from "react-icons/fa";
 import { supabase } from "@/lib/supabase";
+import { motion } from "framer-motion";
+
 
 // Define Book type
 interface Book {
@@ -45,15 +48,26 @@ const HomePage: FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
-      <h1 className="text-5xl font-bold text-center text-gray-900">
-        Encorpora
-      </h1>
-      <p className="text-lg text-gray-700 text-center mt-4 max-w-2xl">
+      <motion.h1
+        className="text-5xl font-bold text-center text-gray-900"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.25, ease: "easeOut" }}
+      >
+        Welcome to Encorpora
+      </motion.h1>
+
+      <motion.p
+        className="text-2xl text-gray-700 text-center mt-4 max-w-2xl"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.33, ease: "easeOut", delay: 0.8 }}
+      >
         Education Engineered for You
-      </p>
+      </motion.p>
 
       {/* Top-Level Calls to Action */}
-      <div className="mt-10 flex flex-wrap justify-center gap-6">
+      <div className="mt-8 flex flex-wrap justify-center gap-6">
         <Card className="w-80 shadow-lg">
           <CardContent className="p-6 flex flex-col items-center text-center">
             <FaBook className="text-blue-500 text-5xl" />
@@ -88,6 +102,28 @@ const HomePage: FC = () => {
             <Button className="mt-4" disabled>Stay Tuned</Button>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Consulting & Partnerships */}
+      <div className="mt-14 text-center max-w-3xl">
+        <h2 className="text-3xl font-semibold flex items-center justify-center gap-3">
+          <FaHandshake className="text-blue-500 text-4xl" /> Consulting & Partnerships
+        </h2>
+        <p className="text-gray-700 mt-2">
+          We offer <strong>custom books, AI-powered learning solutions, and tailored software development</strong>.
+        </p>
+        <p className="text-gray-600 mt-2">
+          Whether you&apos;re looking for <strong>a partnership in education technology</strong>, a <strong>fully customized learning experience</strong>,
+          or <strong>software development services</strong>, we can build something amazing together.
+        </p>
+        <div className="mt-4 flex flex-col sm:flex-row justify-center gap-6 text-lg font-semibold">
+          <a href="mailto:team@encorpora.io" className="text-blue-600 hover:underline flex items-center gap-2">
+            <FaEnvelope className="text-xl" /> team@encorpora.io
+          </a>
+          <a href="tel:+17703765331" className="text-blue-600 hover:underline flex items-center gap-2">
+            <FaPhone className="text-xl" /> 770-376-5331
+          </a>
+        </div>
       </div>
 
       {/* About Encorpora Section */}
@@ -135,7 +171,7 @@ const HomePage: FC = () => {
       </div >
 
       {/* Featured Books List */}
-      < div className="mt-10 flex flex-wrap justify-center gap-6" >
+      <div className="mt-10 flex flex-wrap justify-center gap-6" >
         {
           loading ? (
             <p className="text-gray-600" > Loading featured books...</p>
