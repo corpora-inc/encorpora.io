@@ -51,7 +51,7 @@ const HomePage: FC = () => {
       className="min-h-screen bg-gray-100 flex flex-col items-center p-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.5, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
     >
       <motion.h1
         className="text-5xl font-bold text-center text-gray-900"
@@ -113,9 +113,9 @@ const HomePage: FC = () => {
 
       <motion.div
         className="mt-12 w-full max-w-3xl px-6 text-center"
-        initial={{ opacity: 0, scale: 0, x: -1000 }}
-        animate={{ opacity: 1, scale: 1, x: 0 }}
-        transition={{ duration: 2, ease: "easeOut", delay: 2 }}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2, ease: "easeOut", delay: 1.5 }}
       >
         <h2 className="text-3xl font-semibold flex flex-col items-center">
           <FaHandshake className="text-blue-500 text-4xl mb-2" />
@@ -130,9 +130,9 @@ const HomePage: FC = () => {
         </p>
         <motion.div
           className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-4 text-lg font-semibold"
-          initial={{ x: 5000, zIndex: -1000, opacity: 0, scale: 0 }}
-          animate={{ x: 0, zIndex: 0, opacity: 1, scale: 1 }}
-          transition={{ duration: 5, ease: "easeOut", delay: 1 }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 3, ease: "easeOut", delay: 3 }}
         >
           <a href="mailto:team@encorpora.io" className="text-blue-600 hover:underline flex items-center gap-2">
             <FaEnvelope className="text-xl" /> team@encorpora.io
