@@ -57,7 +57,11 @@ const HomePage: FC = () => {
             <p className="text-gray-600 mt-2">
               Download high-quality learning resources, including elementary math books.
             </p>
-            <Button className="mt-4">Explore Books</Button>
+            {/* open link in new tab - /books */}
+            {/* <Button className="mt-4">Explore Books</Button> */}
+            <a href="/books" target="_blank" rel="noopener noreferrer">
+              <Button className="mt-4">Explore Books</Button>
+            </a>
           </CardContent>
         </Card>
         <Card className="w-80 shadow-lg">
