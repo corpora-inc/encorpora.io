@@ -3,7 +3,11 @@
 import { FC, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { FaBook, FaRobot, FaSchool } from "react-icons/fa";
+import {
+  FaBook, FaRobot, FaSchool,
+  FaUserGraduate, FaLightbulb, FaRocket,
+} from "react-icons/fa";
+// import {FaUserGraduate, FaLightbulb, FaRocket} from "react-icons/fa";
 import { supabase } from "@/lib/supabase";
 
 // Define Book type
@@ -42,10 +46,10 @@ const HomePage: FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
       <h1 className="text-5xl font-bold text-center text-gray-900">
-        Welcome to Encorpora
+        Encorpora
       </h1>
       <p className="text-lg text-gray-700 text-center mt-4 max-w-2xl">
-        The future of education is bright.
+        Education Engineered for You
       </p>
 
       {/* Top-Level Calls to Action */}
@@ -91,7 +95,8 @@ const HomePage: FC = () => {
 
         <Card className="w-80 shadow-lg">
           <CardContent className="p-6 text-center">
-            <h2 className="text-xl font-semibold text-gray-900">Personalizing Learning</h2>
+            <FaUserGraduate className="text-blue-500 text-5xl mx-auto" />
+            <h2 className="text-xl font-semibold text-gray-900 mt-4">Personalizing Learning</h2>
             <p className="text-gray-600 mt-2">
               We create <strong>custom textbooks</strong> tailored to your interests and needs. Our AI-powered platform <strong>adapts to your learning style</strong> and <strong>challenges you</strong> to grow.
             </p>
@@ -100,9 +105,10 @@ const HomePage: FC = () => {
 
         <Card className="w-80 shadow-lg">
           <CardContent className="p-6 text-center">
-            <h2 className="text-xl font-semibold text-gray-900">Empowering Students</h2>
+            <FaLightbulb className="text-yellow-500 text-5xl mx-auto" />
+            <h2 className="text-xl font-semibold text-gray-900 mt-4">Empowering Students</h2>
             <p className="text-gray-600 mt-2">
-              The future of education isn't static—it's <strong>interactive, adaptive, and designed just for you</strong>.
+              The future of education isn&apos;t static—it&apos;s <strong>interactive, adaptive, and designed just for you</strong>.
               Encorpora delivers a dynamic learning experience that <strong>inspires curiosity</strong> and <strong>encourages exploration</strong>.
             </p>
           </CardContent>
@@ -110,13 +116,15 @@ const HomePage: FC = () => {
 
         <Card className="w-80 shadow-lg">
           <CardContent className="p-6 text-center">
-            <h2 className="text-xl font-semibold text-gray-900">Revolutionizing Education</h2>
+            <FaRocket className="text-red-500 text-5xl mx-auto" />
+            <h2 className="text-xl font-semibold text-gray-900 mt-4">Revolutionizing Education</h2>
             <p className="text-gray-700 mt-2">
               We are turning <strong>decades of software engineering</strong> and <strong>education experience</strong> into a platform that <strong>empowers students</strong> to learn in new ways. We are <strong>Encorpora</strong>.
             </p>
           </CardContent>
         </Card>
-      </div >
+
+      </div>
 
       {/* Featured Books */}
       < div className="mt-16 text-center max-w-3xl" >
