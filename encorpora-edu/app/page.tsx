@@ -1,37 +1,44 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FaBook, FaRobot, FaSchool } from "react-icons/fa";
+import { supabase } from "@/lib/supabase";
 
-// Define book type
+// Define Book type
 interface Book {
+  id: string;
   title: string;
   description: string;
   link: string;
 }
 
-// Hardcoded featured books
-const featuredBooks: readonly Book[] = [
-  {
-    title: "2nd Grade Math",
-    description: "Foundational math concepts for second graders.",
-    link: "/books/2nd-grade-math.pdf"
-  },
-  {
-    title: "3rd Grade Math",
-    description: "Advancing arithmetic and problem-solving skills.",
-    link: "/books/3rd-grade-math.pdf"
-  },
-  {
-    title: "College Algebra CLEP",
-    description: "Prepare for the College Algebra CLEP exam.",
-    link: "/books/college-algebra-clep.pdf"
-  }
-];
-
 const HomePage: FC = () => {
+  const [featuredBooks, setFeaturedBooks] = useState<Book[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // Fetch Featured Books from Supabase
+  useEffect(() => {
+    const fetchFeaturedBooks = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("books")
+        .select("*")
+        .eq("is_featured", true)
+        .limit(3);
+
+      if (error) {
+        console.error("Error fetching featured books:", error.message);
+      } else {
+        setFeaturedBooks(data);
+      }
+      setLoading(false);
+    };
+
+    fetchFeaturedBooks();
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
       <h1 className="text-5xl font-bold text-center text-gray-900">
@@ -76,8 +83,6 @@ const HomePage: FC = () => {
       </div>
 
       {/* Featured Books */}
-
-
       <div className="mt-16 text-center max-w-3xl">
         <h2 className="text-3xl font-semibold">Featured Books</h2>
         <p className="text-gray-700 mt-2">
@@ -85,23 +90,27 @@ const HomePage: FC = () => {
         </p>
       </div>
 
+      {/* Featured Books List */}
       <div className="mt-10 flex flex-wrap justify-center gap-6">
-        {featuredBooks.map((book: Book, i: number) => (
-          <Card key={i} className="w-80 shadow-lg">
-            <CardContent className="p-6 text-center">
-              <h3 className="text-lg font-semibold">{book.title}</h3>
-              <p className="text-gray-600">{book.description}</p>
-              <a
-                href={book.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="mt-4">Download</Button>
-              </a>
-            </CardContent>
-          </Card>
-        ))}
+        {loading ? (
+          <p className="text-gray-600">Loading featured books...</p>
+        ) : featuredBooks.length === 0 ? (
+          <p className="text-gray-600">No featured books available.</p>
+        ) : (
+          featuredBooks.map((book) => (
+            <Card key={book.id} className="w-80 shadow-lg">
+              <CardContent className="p-6 text-center">
+                <h3 className="text-lg font-semibold">{book.title}</h3>
+                <p className="text-gray-600">{book.description}</p>
+                <a href={book.link} target="_blank" rel="noopener noreferrer">
+                  <Button className="mt-4">Download</Button>
+                </a>
+              </CardContent>
+            </Card>
+          ))
+        )}
       </div>
+
       {/* View All Books Link */}
       <div className="mt-6">
         <a
@@ -114,11 +123,10 @@ const HomePage: FC = () => {
         </a>
       </div>
 
-
       <footer className="mt-16 text-gray-500 text-sm">
         © {new Date().getFullYear()} Corpora Inc - All Rights Reserved.
       </footer>
-    </div >
+    </div>
   );
 };
 
