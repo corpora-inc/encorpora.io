@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+// Load your fonts (adjust or remove if not using Geist)
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -12,16 +13,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ This is where you set the title & description globally
+// Update metadata to reflect the purpose of your textbooks
 export const metadata: Metadata = {
-  title: "Encorpora - AI-Powered Education",
-  description: "Innovative AI-powered learning for K-12 students. Download free educational books and explore the future of learning.",
+  title: "Encorpora – Structured, No-Frills Textbooks",
+  description:
+    "Encorpora offers concise, systematic textbooks designed to help students fully grasp essential concepts—from early math standards to advanced CLEP exam prep. Each lesson is laser-focused, delivering exactly what learners need to master the material.",
   openGraph: {
-    title: "Encorpora - AI-Powered Education",
-    description: "Revolutionizing education with AI. Explore free resources and cutting-edge learning tools.",
+    title: "Encorpora – Structured, No-Frills Textbooks",
+    description:
+      "We craft direct, distraction-free learning resources that ensure mastery of key topics. Our approach meets or exceeds grade-level expectations and prepares students thoroughly for college-level exams.",
     images: [
       {
-        // url: "/hexagon-logo.webp",
         url: "https://encorpora.io/hexagon-logo-optimized.webp",
         width: 1200,
         height: 630,
@@ -33,9 +35,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
