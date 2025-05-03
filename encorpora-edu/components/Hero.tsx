@@ -28,7 +28,16 @@ export const Hero: FC = () => (
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
         >
-            Offline-first educational apps and books—no tracking, no ads, no wasted time.
+            Educational Books and Apps
+        </motion.p>
+
+        <motion.p
+            className="mt-4 text-xl text-gray-600 max-w-2xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
+        >
+            No tracking. No ads. No wasted time.
         </motion.p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -39,13 +48,9 @@ export const Hero: FC = () => (
 
             {/* Secondary CTA */}
             <Button variant="outline" size="lg" asChild>
-                <Link href="/apps">Download App</Link>
+                <Link href="/apps">Expore Apps</Link>
             </Button>
 
-            {/* Tertiary CTA */}
-            <Button variant="ghost" size="lg" asChild>
-                <Link href="/privacy">Our Privacy Promise</Link>
-            </Button>
         </div>
     </motion.section>
 );

@@ -7,14 +7,16 @@ import { PrivacyBanner } from "@/components/PrivacyBanner";
 import { ProductHighlights } from "@/components/ProductHighlights";
 import { AboutSection } from "@/components/AboutSection";
 import { Footer } from "@/components/Footer";
+import { GetInvolvedBanner } from "@/components/GetInvolvedBanner";
 
 
 const HomePage: FC = () => {
   return (
     <>
       <Hero />
-      <WhySection />
       <PrivacyBanner />
+      <WhySection />
+      <GetInvolvedBanner />
       <ProductHighlights />
       <AboutSection />
       <Footer />
