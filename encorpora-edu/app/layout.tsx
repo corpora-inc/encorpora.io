@@ -24,12 +24,15 @@ export const metadata: Metadata = {
       "We craft direct, distraction-free learning resources that ensure mastery of key topics. Our approach meets or exceeds grade-level expectations and prepares students thoroughly for college-level exams.",
     images: [
       {
-        url: "https://encorpora.io/hexagon-logo-optimized.webp",
+        url: "https://encorpora.io/logo-og.webp",
         width: 1200,
         height: 630,
         alt: "Encorpora Logo",
       },
     ],
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
 };
 
