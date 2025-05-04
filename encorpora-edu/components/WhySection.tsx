@@ -1,6 +1,3 @@
-// app/components/WhySection.tsx
-"use client";
-
 import { FC } from "react";
 import { FaDownload, FaLock, FaBolt } from "react-icons/fa";
 

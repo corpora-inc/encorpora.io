@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import { Hero } from "@/components/Hero";
 import { WhySection } from "@/components/WhySection";
