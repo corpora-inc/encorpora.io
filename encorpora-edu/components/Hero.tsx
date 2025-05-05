@@ -56,9 +56,9 @@ export const Hero: FC = () => {
                     </DropdownMenu.Trigger>
 
                     <DropdownMenu.Content
-                        sideOffset={6}
+                        sideOffset={5}
                         align="center"
-                        collisionPadding={8}
+                        // collisionPadding={1}
                         className="bg-white rounded-lg shadow-lg ring-1 ring-gray-200 overflow-hidden z-10 animate-fade-in"
                     >
                         <DropdownMenu.Item asChild>
