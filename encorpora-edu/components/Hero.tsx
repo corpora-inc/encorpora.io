@@ -61,26 +61,39 @@ export const Hero: FC = () => {
                         // collisionPadding={1}
                         className="bg-white rounded-lg shadow-lg ring-1 ring-gray-200 overflow-hidden z-10 animate-fade-in"
                     >
-                        <DropdownMenu.Item asChild>
-                            <Link
-                                href="https://play.google.com/store/apps/developer?id=Corpora+Inc"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-3 hover:bg-gray-50"
-                            >
-                                <FaGooglePlay size={20} /> Google Play
-                            </Link>
-                        </DropdownMenu.Item>
-                        <DropdownMenu.Item asChild>
+
+                        <DropdownMenu.Item asChild
+                            className="
+                                    flex items-center gap-2 px-4 py-3
+                                    data-[highlighted]:bg-gray-50
+                                    data-[highlighted]:outline-none
+                                    "
+                        >
                             <Link
                                 href="https://apps.apple.com/developer/corpora-inc/id1808739895"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-3 hover:bg-gray-50"
                             >
                                 <FaApple size={20} /> Apple
                             </Link>
                         </DropdownMenu.Item>
+
+                        <DropdownMenu.Item asChild
+                            className="
+                                flex items-center gap-2 px-4 py-3
+                                data-[highlighted]:bg-gray-50
+                                data-[highlighted]:outline-none
+                                "
+                        >
+                            <Link
+                                href="https://play.google.com/store/apps/developer?id=Corpora+Inc"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGooglePlay size={20} /> Google Play
+                            </Link>
+                        </DropdownMenu.Item>
+
                     </DropdownMenu.Content>
                 </DropdownMenu.Root>
             </div>
