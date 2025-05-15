@@ -54,12 +54,12 @@ export const ProductHighlights: FC = () => {
                             </p>
                             <div className="flex justify-center gap-4">
                                 <Button variant="outline" asChild>
-                                    <Link href="https://apps.apple.com/app/idYOUR_APP_ID">
+                                    <Link href="https://apps.apple.com/app/id6744656859">
                                         <FaApple size={20} className="mr-2" /> App Store
                                     </Link>
                                 </Button>
                                 <Button variant="outline" asChild>
-                                    <Link href="https://play.google.com/store/apps/details?id=YOUR_APP_ID">
+                                    <Link href="https://play.google.com/store/apps/details?id=com.corpora_yijing.app">
                                         <FaGooglePlay size={20} className="mr-2" /> Google Play
                                     </Link>
                                 </Button>
