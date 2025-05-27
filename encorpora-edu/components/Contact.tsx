@@ -48,7 +48,7 @@ const ContactSection: FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            ContactSection & Partnerships
+            Consulting & Partnerships
           </motion.h2>
 
           <motion.div
