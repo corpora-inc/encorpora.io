@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaPhone } from "react-icons/fa";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -17,21 +17,12 @@ const Footer: FC = () => {
   ];
 
   const socialLinks = [
-    // {
-    //   icon: <FaLinkedin />,
-    //   href: "https://linkedin.com/company/encorpora",
-    //   label: "LinkedIn",
-    // },
-    // {
-    //   icon: <FaTwitter />,
-    //   href: "https://twitter.com/encorpora",
-    //   label: "Twitter",
-    // },
-    // {
-    //   icon: <FaInstagram />,
-    //   href: "https://instagram.com/encorpora",
-    //   label: "Instagram",
-    // },
+    {
+      icon: <FaGithub />,
+      href: "https://github.com/corpora-inc",
+      label: "Github",
+    },
+
   ];
 
   return (
@@ -60,7 +51,7 @@ const Footer: FC = () => {
               personalized experiences.
             </p>
 
-            {/* <div className="flex space-x-4">
+            <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -71,7 +62,7 @@ const Footer: FC = () => {
                   {social.icon}
                 </a>
               ))}
-            </div> */}
+            </div>
           </div>
 
           {/* Quick links */}
