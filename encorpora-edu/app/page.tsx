@@ -7,6 +7,7 @@ import ContactSection from "@/components/Contact";
 import FeaturedBooks from "@/components/FeaturedBooks";
 import WhySection from "@/components/WhySection";
 import Features from "@/components/Features";
+import FeaturedApps from "@/components/FeaturedApp";
 
 const HomePage: FC = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage: FC = () => {
       <AboutSection />
       <WhySection />
       <Features />
+      <FeaturedApps />
       <FeaturedBooks />
       <ContactSection />
     </>
@@ -22,6 +24,3 @@ const HomePage: FC = () => {
 };
 
 export default HomePage;
-// falta seccion de las apps
-// seccion de la mision
-// y dejar en en la seccion de featuers un botton que lleve a la seccion de los terminos y condiciones. 
