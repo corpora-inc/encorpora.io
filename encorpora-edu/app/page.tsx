@@ -1,27 +1,27 @@
-'use client'
+"use client";
 
 import { FC } from "react";
 import { Hero } from "@/components/Hero";
-import { WhySection } from "@/components/WhySection";
-import { PrivacyBanner } from "@/components/PrivacyBanner";
-import { ProductHighlights } from "@/components/ProductHighlights";
 import { AboutSection } from "@/components/AboutSection";
-import { GetInvolvedBanner } from "@/components/GetInvolvedBanner";
 import ContactSection from "@/components/Contact";
-
+import FeaturedBooks from "@/components/FeaturedBooks";
+import WhySection from "@/components/WhySection";
+import Features from "@/components/Features";
 
 const HomePage: FC = () => {
   return (
     <>
       <Hero />
       <AboutSection />
-      <PrivacyBanner />
       <WhySection />
-      <GetInvolvedBanner />
-      <ProductHighlights />
+      <Features />
+      <FeaturedBooks />
       <ContactSection />
     </>
   );
 };
 
 export default HomePage;
+// falta seccion de las apps
+// seccion de la mision
+// y dejar en en la seccion de featuers un botton que lleve a la seccion de los terminos y condiciones. 
