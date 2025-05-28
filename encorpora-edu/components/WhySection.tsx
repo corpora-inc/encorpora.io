@@ -1,6 +1,5 @@
 "use client";
 import { FC } from "react";
-import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FaBolt, FaDownload, FaLock } from "react-icons/fa";
