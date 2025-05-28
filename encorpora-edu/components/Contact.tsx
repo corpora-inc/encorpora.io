@@ -79,8 +79,9 @@ const ContactSection: FC = () => {
             }}
           >
 
-            {SERVICES.map(({ title, description, icon }) => (
+            {SERVICES.map(({ title, description, icon }, index) => (
               <motion.div
+                key={index}
                 className="cursor-pointer p-8 border-2 border-black rounded-2xl relative transition-all duration-300 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-2 hover:-translate-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
