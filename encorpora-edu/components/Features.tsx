@@ -11,7 +11,7 @@ const FEATURES = [
     title: "True Ownership",
     description: (
       <>
-        Buy a book or app once – it's yours for life, with free updates. No subscriptions, no lock-in, no DRM.
+        Buy a book or app once - it's yours for life, with free updates. No subscriptions, no lock-in, no DRM.
       </>
     ),
   },
@@ -31,12 +31,12 @@ const FEATURES = [
   {
     icon: <FaCloud className="text-black text-2xl mb-3" />,
     title: "Offline-First",
-    description: "Use all our apps and books anywhere – even with no connection. We only require network access when absolutely necessary.",
+    description: "Use all our apps and books anywhere - even with no connection. We only require network access when absolutely necessary.",
   },
   {
     icon: <FaPlug className="text-black text-2xl mb-3" />,
     title: "Minimal Permissions",
-    description: "We request the bare minimum – most apps need no special access at all. Your data always stays on your device.",
+    description: "We request the bare minimum - most apps need no special access at all. Your data always stays on your device.",
   },
   {
     icon: <FaGithub className="text-black text-2xl mb-3" />,
@@ -67,14 +67,14 @@ const FEATURES = [
 ];
 
 const Features: FC = () => (
-  <section id="features" className="py-20 px-4 bg-white">
-    <div className="max-w-5xl xl:max-w-6xl mx-auto">
+  <section id="features" className="py-20 px-4 bg-white relative overflow-hidden">
+    <div className="max-w-5xl xl:max-w-6xl mx-auto relative z-10">
       <div className="text-center mb-14">
         <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
           Open, Honest, and Built to Last
         </h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-          Buy it once, own it for life – no subscriptions, no ads, and no tricks. Offline-first. Open source. Built for real trust and real results.
+          Buy it once, own it for life - no subscriptions, no ads, and no tricks. Offline-first. Open source. Built for real trust and real results.
         </p>
       </div>
       <motion.div

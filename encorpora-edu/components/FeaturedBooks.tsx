@@ -50,7 +50,7 @@ const FeaturedBooks = () => {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
   };
-  
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -114,7 +114,7 @@ const FeaturedBooks = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Featured educational resources
+            Featured Draft Books
           </motion.h2>
 
           <motion.p
@@ -124,7 +124,7 @@ const FeaturedBooks = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            Explore our collection of high-quality educational materials
+            Explore our collection of free drafts
             designed for effective learning.
           </motion.p>
         </motion.div>
@@ -241,7 +241,7 @@ const FeaturedBooks = () => {
             </motion.a>
           </motion.div>
         </motion.div>
-    </div>
+      </div>
     </section>
   );
 };
