@@ -30,7 +30,7 @@ const OFFERS = [
 ];
 
 const WhySection: FC = () => (
-  <section className="pt-20 bg-white relative overflow-hidden">
+  <section className="mt-24 bg-white relative overflow-hidden">
     {/* Background gradient circles */}
     {/* <div className="absolute inset-0 z-0 pointer-events-none">
       <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#f9f9f9] rounded-full -mb-48 -mr-48" />
