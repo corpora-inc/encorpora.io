@@ -11,7 +11,7 @@ const SERVICES = [
   },
   {
     title: "Learning Solutions",
-    description: "Seamless, interactive learning experiences tailored to every need—digital or print.",
+    description: "Seamless, interactive learning experiences tailored to every need - digital or print.",
     icon: <FaGraduationCap className="text-white text-lg" />,
 
   },

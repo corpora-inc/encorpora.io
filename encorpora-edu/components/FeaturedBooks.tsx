@@ -62,7 +62,7 @@ const FeaturedBooks = () => {
   return (
     <section
       id="books"
-      className="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-white relative overflow-hidden"
+      className="py-12 sm:py-16 sm:py-30 px-4 sm:px-6 lg:px-12 bg-white relative overflow-hidden"
     >
       {/* Clean, subtle geometric accents */}
       <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-gray-50 rounded-full -translate-x-1/2 -translate-y-1/2 z-0 opacity-60" />

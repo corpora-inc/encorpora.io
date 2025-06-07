@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { FaEnvelope, FaGithub, FaPhone } from "react-icons/fa";
+import { FaAccessibleIcon, FaAcquisitionsIncorporated, FaAddressBook, FaConnectdevelop, FaEnvelope, FaFirefox, FaGithub, FaPhone } from "react-icons/fa";
+import { SiGitconnected } from "react-icons/si";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -12,7 +13,7 @@ const Footer: FC = () => {
   const quickLinks: FooterLink[] = [
     { label: "Shop", href: "https://shop.encorpora.io/" },
     { label: "Github", href: "https://github.com/corpora-inc" },
-    { label: "Blog", href: "https://free2z.com/corpora" },
+    { label: "Blog", href: "https://free2z.cash/corpora" },
     { label: "Contact", href: "https://shop.encorpora.io/pages/contact" },
   ];
 
@@ -21,6 +22,15 @@ const Footer: FC = () => {
       icon: <FaGithub />,
       href: "https://github.com/corpora-inc",
       label: "Github",
+    },
+    {
+      // icon: <FaAddressBook />,
+      // icon: <FaConnectdevelop />,
+      // icon: <FaAcquisitionsIncorporated />,
+      // icon: <FaFirefox />,
+      icon: <SiGitconnected />,
+      href: "https://free2z.cash/corpora",
+      label: "Free2z",
     },
 
   ];
@@ -56,6 +66,7 @@ const Footer: FC = () => {
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
                   aria-label={social.label}
                   className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white hover:border-black transition-colors duration-300"
                 >

@@ -32,10 +32,10 @@ const OFFERS = [
 const WhySection: FC = () => (
   <section className="pt-20 bg-white relative overflow-hidden">
     {/* Background gradient circles */}
-    <div className="absolute inset-0 z-0 pointer-events-none">
+    {/* <div className="absolute inset-0 z-0 pointer-events-none">
       <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#f9f9f9] rounded-full -mb-48 -mr-48" />
       <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#f9f9f9] rounded-full -mb-48 -ml-48" />
-    </div>
+    </div> */}
 
     <div className="max-w-5xl xl:max-w-6xl mx-auto px-4 relative z-10">
       <div className="text-center mb-14">

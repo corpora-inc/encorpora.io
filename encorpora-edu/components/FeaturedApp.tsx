@@ -14,7 +14,7 @@ const FeaturedApps = () => {
   return (
     <section
       id="apps"
-      className="px-2 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
+      className="mt-2 sm:mt-6 px-2 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
     >
 
       {/* <div className="absolute inset-0 z-0 pointer-events-none">
@@ -26,7 +26,7 @@ const FeaturedApps = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="block h-px w-16 bg-gradient-to-r from-transparent via-black to-transparent mx-auto mb-12 opacity-30" />
+          <span className="block h-px w-16 bg-gradient-to-r from-transparent via-black to-transparent mx-auto mt-6 mb-24 opacity-30" />
           <motion.h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
