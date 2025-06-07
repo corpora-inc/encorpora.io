@@ -11,28 +11,29 @@ const OFFERS = [
     title: "Speed",
     description: "Finish lessons, chapters, or drills in record time - without sacrificing depth or clarity.",
     href: "https://github.com/orgs/corpora-inc/repositories",
+    cta: "Explore",
   },
   {
     icon: <FaBolt className="text-3xl text-black" />,
     title: "Focus",
     description: "No clutter, no distractions, no cognitive overhead. Every detail engineered for pure, productive learning.",
-    href: "/#apps", // Maybe a section on your homepage about your best apps
+    href: "/#apps",
+    cta: "Explore",
   },
   {
     icon: <FaHeart className="text-3xl text-black" />,
     title: "Respect",
     description: "No ads. No tracking. No surveillance. We value your trust - and your time - above all.",
     href: "/privacy",
+    cta: "Learn More",
   },
 ];
 
 const WhySection: FC = () => (
-  <section className="py-24 bg-white">
-    <div className="max-w-4xl mx-auto px-6">
-      <div className="text-center mb-16">
-        {/* If you want a micro-accent bar above, uncomment below */}
-        {/* <div className="mx-auto mb-4 h-1 w-12 bg-gray-300 rounded" /> */}
-        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-5">
+  <section className="py-20 bg-white">
+    <div className="max-w-5xl xl:max-w-6xl mx-auto px-4">
+      <div className="text-center mb-14">
+        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
           Why Corpora?
         </h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -42,33 +43,43 @@ const WhySection: FC = () => (
       </div>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        className="
+          grid grid-cols-1
+          md:grid-cols-3
+          gap-4 md:gap-x-8 md:gap-y-6
+        "
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        {OFFERS.map(({ icon, title, description, href }, idx) => (
+        {OFFERS.map(({ icon, title, description, href, cta }, idx) => (
           <Link
             key={title}
             href={href}
             target={href.startsWith("http") ? "_blank" : undefined}
             rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="
-              group block bg-gray-50 hover:bg-gray-100 transition-colors border border-gray-200 rounded-2xl px-8 py-12 text-center cursor-pointer shadow-sm
+            className={`
+              group flex flex-col justify-between
+              bg-gray-50 hover:bg-gray-100 transition-colors border border-gray-200 rounded-2xl
+              px-6 py-8 text-center cursor-pointer shadow-sm
               focus:outline-none focus-visible:ring-2 focus-visible:ring-black
-            "
+              w-full max-w-md mx-auto
+            `}
             style={{ textDecoration: "none" }}
           >
-            <div className="flex flex-col items-center">
-              <span className="mb-6 flex items-center justify-center w-16 h-16 bg-white border border-gray-200 rounded-full transition group-hover:shadow-md">
+            <div>
+              <span className="mb-6 flex items-center justify-center w-14 h-14 bg-white border border-gray-200 rounded-full transition group-hover:shadow-md mx-auto">
                 {icon}
               </span>
               <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
               <p className="text-gray-600 leading-relaxed">{description}</p>
-              <span className="block mt-5 text-sm font-semibold text-gray-400 group-hover:text-black transition">
-                {href === "/privacy" ? "Learn More" : "Explore"}
-                <span className="ml-2 align-middle">&#8594;</span>
+            </div>
+            <div className="mt-8 flex justify-center items-end">
+              <span
+                className="block text-sm font-semibold text-gray-500 group-hover:text-black transition"
+              >
+                {cta} <span className="ml-2 align-middle">&#8594;</span>
               </span>
             </div>
           </Link>
