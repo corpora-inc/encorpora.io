@@ -12,12 +12,13 @@ const SERVICES = [
   {
     title: "Learning Solutions",
     description: "Seamless, interactive learning experiences tailored to every need—digital or print.",
-    icon: <FaLaptop className="text-white text-lg" />,
+    icon: <FaGraduationCap className="text-white text-lg" />,
+
   },
   {
     title: "Software Development",
     description: "Modern, robust, and efficient educational software built to order.",
-    icon: <FaGraduationCap className="text-white text-lg" />,
+    icon: <FaLaptop className="text-white text-lg" />,
   },
 ];
 
