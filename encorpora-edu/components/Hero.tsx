@@ -7,29 +7,46 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FaApple, FaGooglePlay, FaBookOpen } from "react-icons/fa";
 
-const fade = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-
 export const Hero: FC = () => (
     <motion.section
-        className="min-h-screen bg-white flex items-center justify-center px-5"
-        {...fade}
-        transition={{ duration: 1, ease: "easeOut" }}
+        className="min-h-screen bg-white flex items-center justify-center px-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
     >
-        {/* keep everything bound so it never stretches too far */}
-        <div className="w-full max-w-xxl flex flex-col items-center text-center">
-            <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
+        <div className="w-full max-w-3xl flex flex-col items-center text-center">
+            {/* Headline */}
+            <motion.h1
+                className="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-tight"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+            >
                 Learn Smarter, Not Harder.
-            </h1>
+            </motion.h1>
 
-            <p className="mt-6 text-2xl text-gray-700">
+            {/* Sub-headline */}
+            <motion.p
+                className="mt-6 text-2xl text-gray-700"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+            >
                 Focused books and apps that cut study time in half.
-            </p>
+            </motion.p>
 
-            <p className="mt-3 text-xl text-gray-600">No ads. No trackers. No wasted time.</p>
+            {/* Trust line */}
+            <motion.p
+                className="mt-3 text-xl text-gray-600"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+            >
+                No ads. No trackers. No wasted time.
+            </motion.p>
 
             {/* CTAs */}
             <div className="mt-8 w-full flex flex-col sm:flex-row sm:justify-center gap-4">
-                {/* iOS */}
                 <Button
                     asChild
                     variant="outline"
@@ -46,7 +63,6 @@ export const Hero: FC = () => (
                     </Link>
                 </Button>
 
-                {/* Android */}
                 <Button
                     asChild
                     variant="outline"
@@ -63,7 +79,6 @@ export const Hero: FC = () => (
                     </Link>
                 </Button>
 
-                {/* Books */}
                 <Button
                     asChild
                     size="lg"
