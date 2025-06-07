@@ -33,7 +33,7 @@ const WhySection: FC = () => (
   <section className="pt-20 bg-white relative overflow-hidden">
     {/* Background gradient circles */}
     <div className="absolute inset-0 z-0 pointer-events-none">
-      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] bg-[#f9f9f9] rounded-full -mt-32 -mr-32" />
+      <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#f9f9f9] rounded-full -mb-48 -mr-48" />
       <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#f9f9f9] rounded-full -mb-48 -ml-48" />
     </div>
 

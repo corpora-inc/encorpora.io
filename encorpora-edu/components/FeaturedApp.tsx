@@ -17,10 +17,10 @@ const FeaturedApps = () => {
       className="px-2 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
     >
 
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] bg-[#f9f9f9] rounded-full -mt-32 -mr-32" />
         <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#f9f9f9] rounded-full -mb-48 -ml-48" />
-      </div>
+      </div> */}
       {/* One subtle background accent for depth */}
       {/* <div className="absolute right-1/3 w-[60vw] h-[60vw] max-w-3xl max-h-3xl bg-[#f9f9f9] rounded-full opacity-40 pointer-events-none z-0"></div> */}
 
