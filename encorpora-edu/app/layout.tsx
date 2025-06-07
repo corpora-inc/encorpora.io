@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 // Load your fonts (adjust or remove if not using Geist)
 const geistSans = Geist({
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Encorpora offers concise, systematic textbooks designed to help students fully grasp essential concepts—from early math standards to advanced CLEP exam prep. Each lesson is laser-focused, delivering exactly what learners need to master the material.",
   openGraph: {
-    title: "Encorpora – Structured, No-Frills Textbooks",
+    title: "Encorpora - Structured, No-Frills Textbooks and Apps",
     description:
       "We craft direct, distraction-free learning resources that ensure mastery of key topics. Our approach meets or exceeds grade-level expectations and prepares students thoroughly for college-level exams.",
     images: [
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
   },
 };
 
@@ -43,8 +44,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
+        <Footer />
       </body>
     </html>
   );
