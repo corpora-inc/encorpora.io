@@ -32,12 +32,12 @@ export const Hero: FC = () => (
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
             >
-                Focused books and apps that cut study time in half.
+                Focused books and apps that make learning a joy.
             </motion.p>
 
             {/* Trust line */}
             <motion.p
-                className="mt-3 text-xl text-gray-600"
+                className="mt-4 text-xl text-gray-600"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
