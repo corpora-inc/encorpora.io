@@ -1,102 +1,80 @@
 // app/components/Hero.tsx
 "use client";
 
-import React, { FC } from "react";
+import { FC } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { FaApple, FaGooglePlay } from "react-icons/fa";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { FaApple, FaGooglePlay, FaBookOpen } from "react-icons/fa";
 
-export const Hero: FC = () => {
-    return (
-        <motion.section
-            className="min-h-screen bg-white flex flex-col items-center justify-center text-center px-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-        >
-            <motion.h1
-                className="text-6xl font-extrabold text-gray-900 leading-tight max-w-3xl px-4"
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-            >
-                Pure. Clean. Private. Fast. Focused.
-            </motion.h1>
+const fade = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
 
-            <motion.p
-                className="mt-4 text-2xl text-gray-700 max-w-2xl"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-            >
-                Educational Books and Apps
-            </motion.p>
+export const Hero: FC = () => (
+    <motion.section
+        className="min-h-screen bg-white flex items-center justify-center px-5"
+        {...fade}
+        transition={{ duration: 1, ease: "easeOut" }}
+    >
+        {/* keep everything bound so it never stretches too far */}
+        <div className="w-full max-w-xxl flex flex-col items-center text-center">
+            <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
+                Learn Smarter, Not Harder.
+            </h1>
 
-            <motion.p
-                className="mt-4 text-xl text-gray-600 max-w-2xl"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
-            >
-                No tracking. No ads. No wasted time.
-            </motion.p>
+            <p className="mt-6 text-2xl text-gray-700">
+                Focused books and apps that cut study time in half.
+            </p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <Button size="lg" asChild>
-                    <Link href="https://shop.encorpora.io">Explore Books</Link>
+            <p className="mt-3 text-xl text-gray-600">No ads. No trackers. No wasted time.</p>
+
+            {/* CTAs */}
+            <div className="mt-8 w-full flex flex-col sm:flex-row sm:justify-center gap-4">
+                {/* iOS */}
+                <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="flex items-center gap-2 w-full sm:w-48 justify-center"
+                >
+                    <Link
+                        href="https://apps.apple.com/us/developer/corpora-inc/id1808739895"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaApple size={18} />
+                        iOS Apps
+                    </Link>
                 </Button>
 
-                <DropdownMenu.Root>
-                    <DropdownMenu.Trigger asChild>
-                        <Button variant="outline" size="lg">
-                            Explore Apps
-                        </Button>
-                    </DropdownMenu.Trigger>
-
-                    <DropdownMenu.Content
-                        sideOffset={5}
-                        align="center"
-                        // collisionPadding={1}
-                        className="bg-white rounded-lg shadow-lg ring-1 ring-gray-200 overflow-hidden z-10 animate-fade-in"
+                {/* Android */}
+                <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="flex items-center gap-2 w-full sm:w-48 justify-center"
+                >
+                    <Link
+                        href="https://play.google.com/store/apps/developer?id=Corpora+Inc"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
+                        <FaGooglePlay size={18} />
+                        Android Apps
+                    </Link>
+                </Button>
 
-                        <DropdownMenu.Item asChild
-                            className="
-                                    flex items-center gap-2 px-4 py-3
-                                    data-[highlighted]:bg-gray-50
-                                    data-[highlighted]:outline-none
-                                    "
-                        >
-                            <Link
-                                href="https://apps.apple.com/developer/corpora-inc/id1808739895"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <FaApple size={20} /> Apple
-                            </Link>
-                        </DropdownMenu.Item>
-
-                        <DropdownMenu.Item asChild
-                            className="
-                                flex items-center gap-2 px-4 py-3
-                                data-[highlighted]:bg-gray-50
-                                data-[highlighted]:outline-none
-                                "
-                        >
-                            <Link
-                                href="https://play.google.com/store/apps/developer?id=Corpora+Inc"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <FaGooglePlay size={20} /> Google Play
-                            </Link>
-                        </DropdownMenu.Item>
-
-                    </DropdownMenu.Content>
-                </DropdownMenu.Root>
+                {/* Books */}
+                <Button
+                    asChild
+                    size="lg"
+                    className="flex items-center gap-2 w-full sm:w-48 justify-center"
+                >
+                    <Link href="https://shop.encorpora.io">
+                        <FaBookOpen size={18} />
+                        Browse Books
+                    </Link>
+                </Button>
             </div>
-        </motion.section>
-    );
-};
+        </div>
+    </motion.section>
+);
