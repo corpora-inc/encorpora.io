@@ -17,12 +17,12 @@ export const Hero: FC = () => {
             transition={{ duration: 1, ease: "easeOut" }}
         >
             <motion.h1
-                className="text-6xl font-extrabold text-gray-900 leading-tight max-w-3xl"
+                className="text-6xl font-extrabold text-gray-900 leading-tight max-w-3xl px-4"
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
-                Pure. Clean. Private.
+                Pure. Clean. Private. Fast. Focused.
             </motion.h1>
 
             <motion.p
