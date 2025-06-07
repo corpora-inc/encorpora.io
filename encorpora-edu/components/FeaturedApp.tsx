@@ -14,155 +14,14 @@ const FeaturedApps = () => {
   return (
     <section
       id="apps"
-      className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
+      className="px-2 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
     >
-      {/* Background Elements - Unique to FeaturedApps */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Grid pattern */}
-        <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-[0.03]">
-          {Array(36).fill(null).map((_, i) => (
-            <div key={i} className="border-[0.5px] border-black"></div>
-          ))}
-        </div>
-
-        {/* Accent elements */}
-        <div className="absolute top-12 right-12 w-32 h-32">
-          <motion.svg
-            viewBox="0 0 100 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            initial={{ opacity: 0, rotate: -10 }}
-            whileInView={{ opacity: 0.5, rotate: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          >
-            <motion.rect
-              x="20"
-              y="20"
-              width="60"
-              height="60"
-              stroke="black"
-              strokeWidth="0.5"
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-            />
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="30"
-              stroke="black"
-              strokeWidth="0.5"
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
-            />
-          </motion.svg>
-        </div>
-
-        {/* Subtle code-like symbols */}
-        <div className="absolute bottom-24 left-12 opacity-10 hidden lg:block">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="text-4xl font-light text-black"
-          >
-            {`{ }`}
-          </motion.div>
-        </div>
-
-        {/* Minimalist dot pattern */}
-        <div className="absolute top-1/4 left-1/4 grid grid-cols-3 gap-4 opacity-10 hidden lg:grid">
-          {Array(9).fill(null).map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="w-1 h-1 rounded-full bg-black"
-            ></motion.div>
-          ))}
-        </div>
-
-        {/* Abstract device outlines */}
-        <motion.div
-          className="absolute -right-12 bottom-1/3 w-40 h-40 opacity-5 hidden xl:block"
-          initial={{ x: 40, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 0.05 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5 }}
-        >
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="10" width="60" height="80" rx="4" stroke="black" strokeWidth="2" />
-            <circle cx="50" cy="80" r="4" stroke="black" strokeWidth="1" />
-            <line x1="35" y1="20" x2="65" y2="20" stroke="black" strokeWidth="1" />
-          </svg>
-        </motion.div>
-
-        {/* Connecting lines */}
-        <motion.div
-          className="absolute left-0 top-1/2 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent opacity-0"
-          initial={{ scaleX: 0, opacity: 0 }}
-          whileInView={{ scaleX: 1, opacity: 0.3 }}
-          viewport={{ once: true }}
-          transition={{ duration: 2 }}
-        ></motion.div>
-
-        <motion.div
-          className="absolute right-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-gray-200 to-transparent opacity-0"
-          initial={{ scaleY: 0, opacity: 0 }}
-          whileInView={{ scaleY: 1, opacity: 0.1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 2, delay: 0.5 }}
-        ></motion.div>
-
-        {/* Diagonal accent shapes */}
-        <div className="absolute -left-8 top-96 opacity-10 hidden lg:block">
-          <motion.svg
-            width="100"
-            height="100"
-            viewBox="0 0 100 100"
-            initial={{ rotate: 45, scale: 0.8 }}
-            whileInView={{ rotate: 0, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5 }}
-          >
-            <motion.path
-              d="M10,50 L90,50"
-              stroke="black"
-              strokeWidth="1"
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5 }}
-            />
-            <motion.path
-              d="M50,10 L50,90"
-              stroke="black"
-              strokeWidth="1"
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, delay: 0.3 }}
-            />
-          </motion.svg>
-        </div>
-      </div>
+      {/* One subtle background accent for depth */}
+      {/* <div className="absolute right-1/3 w-[60vw] h-[60vw] max-w-3xl max-h-3xl bg-[#f9f9f9] rounded-full opacity-40 pointer-events-none z-0"></div> */}
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-block h-px w-12 bg-black mb-6"
-          ></motion.span>
-
+          <span className="block h-px w-16 bg-gradient-to-r from-transparent via-black to-transparent mx-auto mb-12 opacity-30" />
           <motion.h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
@@ -172,7 +31,6 @@ const FeaturedApps = () => {
           >
             Educational Apps
           </motion.h2>
-
           <motion.p
             className="text-gray-600 max-w-2xl mx-auto text-lg"
             initial={{ opacity: 0 }}
@@ -180,8 +38,7 @@ const FeaturedApps = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Offline-first learning applications designed to eliminate
-            distractions and help you focus on what matters most.
+            Offline-first learning applications designed to eliminate distractions and help you focus on what matters most.
           </motion.p>
         </div>
 
@@ -265,18 +122,14 @@ const FeaturedApps = () => {
           ))}
         </motion.div>
 
-        {/* Final decorative element */}
+        {/* Simple bar accent for section finish */}
         <motion.div
-          className="flex justify-center items-center mt-16 lg:mt-20 opacity-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.2 }}
+          className="h-px w-24 bg-gradient-to-r from-transparent via-black to-transparent mx-auto mt-16 opacity-20"
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 0.2 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.8 }}
-        >
-          <div className="w-[1px] h-8 bg-black mx-1"></div>
-          <div className="w-[1px] h-5 bg-black mx-1"></div>
-          <div className="w-[1px] h-3 bg-black mx-1"></div>
-        </motion.div>
+          transition={{ duration: 0.8, delay: 0.3 }}
+        />
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export const APPS_INFO: App[] = [
     id: "1",
     title: "Corpán",
     description:
-      "Learn 12 languages from any language—fully localized, practical sentences, instant audio, and easy switching. Real-world phrases. No ads—just pure learning.",
+      "Learn 12 languages from any language - fully localized, practical sentences, instant audio, and easy switching. Real-world phrases. No ads - just pure learning.",
     icon: "/logos/corpan-logo.webp",
     platforms: [
       {
@@ -36,7 +36,7 @@ export const APPS_INFO: App[] = [
     id: "2",
     title: "Yìjīng | I Ching Oracle",
     description:
-      "Explore the I Ching in English & Español with original hexagrams, pinyin guidance, and private on-device reading history—your gateway to ancient wisdom!",
+      "Explore the I Ching in English & Español with original hexagrams, pinyin guidance, and private on-device reading history - your gateway to ancient wisdom!",
     icon: "/logos/iching-logo.webp",
     platforms: [
       {
