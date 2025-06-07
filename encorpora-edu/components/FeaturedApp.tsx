@@ -24,35 +24,35 @@ const FeaturedApps = () => {
             <div key={i} className="border-[0.5px] border-black"></div>
           ))}
         </div>
-        
+
         {/* Accent elements */}
         <div className="absolute top-12 right-12 w-32 h-32">
-          <motion.svg 
-            viewBox="0 0 100 100" 
-            fill="none" 
+          <motion.svg
+            viewBox="0 0 100 100"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
             initial={{ opacity: 0, rotate: -10 }}
             whileInView={{ opacity: 0.5, rotate: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeOut" }}
           >
-            <motion.rect 
-              x="20" 
-              y="20" 
-              width="60" 
-              height="60" 
-              stroke="black" 
-              strokeWidth="0.5" 
+            <motion.rect
+              x="20"
+              y="20"
+              width="60"
+              height="60"
+              stroke="black"
+              strokeWidth="0.5"
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 2, ease: "easeInOut" }}
             />
-            <motion.circle 
-              cx="50" 
-              cy="50" 
-              r="30" 
-              stroke="black" 
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="30"
+              stroke="black"
               strokeWidth="0.5"
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
@@ -61,7 +61,7 @@ const FeaturedApps = () => {
             />
           </motion.svg>
         </div>
-        
+
         {/* Subtle code-like symbols */}
         <div className="absolute bottom-24 left-12 opacity-10 hidden lg:block">
           <motion.div
@@ -74,11 +74,11 @@ const FeaturedApps = () => {
             {`{ }`}
           </motion.div>
         </div>
-        
+
         {/* Minimalist dot pattern */}
         <div className="absolute top-1/4 left-1/4 grid grid-cols-3 gap-4 opacity-10 hidden lg:grid">
           {Array(9).fill(null).map((_, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -88,9 +88,9 @@ const FeaturedApps = () => {
             ></motion.div>
           ))}
         </div>
-        
+
         {/* Abstract device outlines */}
-        <motion.div 
+        <motion.div
           className="absolute -right-12 bottom-1/3 w-40 h-40 opacity-5 hidden xl:block"
           initial={{ x: 40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 0.05 }}
@@ -103,47 +103,47 @@ const FeaturedApps = () => {
             <line x1="35" y1="20" x2="65" y2="20" stroke="black" strokeWidth="1" />
           </svg>
         </motion.div>
-        
+
         {/* Connecting lines */}
-        <motion.div 
+        <motion.div
           className="absolute left-0 top-1/2 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent opacity-0"
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 0.3 }}
           viewport={{ once: true }}
           transition={{ duration: 2 }}
         ></motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="absolute right-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-gray-200 to-transparent opacity-0"
           initial={{ scaleY: 0, opacity: 0 }}
           whileInView={{ scaleY: 1, opacity: 0.1 }}
           viewport={{ once: true }}
           transition={{ duration: 2, delay: 0.5 }}
         ></motion.div>
-        
+
         {/* Diagonal accent shapes */}
         <div className="absolute -left-8 top-96 opacity-10 hidden lg:block">
-          <motion.svg 
-            width="100" 
-            height="100" 
+          <motion.svg
+            width="100"
+            height="100"
             viewBox="0 0 100 100"
             initial={{ rotate: 45, scale: 0.8 }}
             whileInView={{ rotate: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5 }}
           >
-            <motion.path 
-              d="M10,50 L90,50" 
-              stroke="black" 
+            <motion.path
+              d="M10,50 L90,50"
+              stroke="black"
               strokeWidth="1"
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5 }}
             />
-            <motion.path 
-              d="M50,10 L50,90" 
-              stroke="black" 
+            <motion.path
+              d="M50,10 L50,90"
+              stroke="black"
               strokeWidth="1"
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
@@ -206,7 +206,7 @@ const FeaturedApps = () => {
               <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-black opacity-5"></div>
               <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-black opacity-5"></div>
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-black opacity-5"></div>
-              
+
               <div className="p-6">
                 <div className="flex items-center gap-4 mb-5">
                   <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center overflow-hidden">
@@ -264,7 +264,7 @@ const FeaturedApps = () => {
             </motion.div>
           ))}
         </motion.div>
-        
+
         {/* Final decorative element */}
         <motion.div
           className="flex justify-center items-center mt-16 lg:mt-20 opacity-20"
