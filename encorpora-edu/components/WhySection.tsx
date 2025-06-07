@@ -30,8 +30,14 @@ const OFFERS = [
 ];
 
 const WhySection: FC = () => (
-  <section className="py-20 bg-white">
-    <div className="max-w-5xl xl:max-w-6xl mx-auto px-4">
+  <section className="pt-20 bg-white relative overflow-hidden">
+    {/* Background gradient circles */}
+    <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] bg-[#f9f9f9] rounded-full -mt-32 -mr-32" />
+      <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#f9f9f9] rounded-full -mb-48 -ml-48" />
+    </div>
+
+    <div className="max-w-5xl xl:max-w-6xl mx-auto px-4 relative z-10">
       <div className="text-center mb-14">
         <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
           Why Corpora?
@@ -53,7 +59,7 @@ const WhySection: FC = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        {OFFERS.map(({ icon, title, description, href, cta }, idx) => (
+        {OFFERS.map(({ icon, title, description, href, cta }) => (
           <Link
             key={title}
             href={href}
@@ -84,6 +90,35 @@ const WhySection: FC = () => (
             </div>
           </Link>
         ))}
+      </motion.div>
+    </div>
+
+    {/* Gradient bar and "Corpora" label at the bottom */}
+    <div className="relative mt-24">
+
+      <motion.div
+        className="h-px w-24 bg-gradient-to-r from-transparent via-black to-
+transparent mx-auto"
+        initial={{ scaleX: 0, opacity: 0 }}
+        whileInView={{ scaleX: 1, opacity: 0.2 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      />
+      <motion.div
+        className="w-2 h-2 rounded-full bg-black mx-auto -mt-1 opacity-20"
+        initial={{ scale: 0, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 0.2 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      />
+      <motion.div
+        className="text-xs text-gray-400 text-center mt-6 tracking-widest uppercase"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 1 }}
+      >
+        Corpora
       </motion.div>
     </div>
   </section>
