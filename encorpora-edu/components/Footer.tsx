@@ -75,9 +75,10 @@ const Footer: FC = () => {
                 <li key={index}>
                   <a
                     href={link.href}
+                    target="_blank"
                     className="text-gray-600 hover:text-black transition-colors duration-300 text-sm inline-block relative group"
                   >
-                    <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">
+                    <span className="inline-block transition-transform duration-300">
                       {link.label}
                     </span>
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-black group-hover:w-full transition-all duration-300"></span>
