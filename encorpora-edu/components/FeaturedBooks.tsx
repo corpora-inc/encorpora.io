@@ -26,11 +26,7 @@ const FeaturedBooks = () => {
         .eq("is_featured", true)
         .order("title", { ascending: true });
 
-      if (error) {
-        setFeaturedBooks([]);
-      } else {
-        setFeaturedBooks(data || []);
-      }
+      setFeaturedBooks(error ? [] : data || []);
       setLoading(false);
     };
     fetchFeatured();
@@ -62,14 +58,14 @@ const FeaturedBooks = () => {
   return (
     <section
       id="books"
-      className="py-12 sm:py-16 sm:py-30 px-4 sm:px-6 lg:px-12 bg-white relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
     >
       {/* Clean, subtle geometric accents */}
       <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-gray-50 rounded-full -translate-x-1/2 -translate-y-1/2 z-0 opacity-60" />
       <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-gray-50 rounded-full translate-x-1/2 translate-y-1/2 z-0 opacity-60" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-14 sm:mb-18 lg:mb-20">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-black tracking-tight leading-tight">
             Featured Draft Books
           </h2>
@@ -84,7 +80,7 @@ const FeaturedBooks = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
             {books.length === 0 ? (
               <motion.p
@@ -99,11 +95,17 @@ const FeaturedBooks = () => {
                   key={book.id}
                   variants={itemVariants}
                   transition={{ duration: 0.5 }}
-                  className="flex w-full"
+                  className="relative"
                 >
-                  <Card className="group h-full w-full overflow-hidden bg-white flex flex-col relative border border-gray-100 rounded-2xl shadow-sm">
-                    <CardContent className="p-6 sm:p-8 lg:p-10 flex flex-col h-full relative z-10">
-                      <h3 className="text-xl sm:text-2xl font-bold text-black tracking-tight mb-4">
+                  {/* Card corner accents for visual unity with apps */}
+                  <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-black opacity-5 z-10"></div>
+                  <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-black opacity-5 z-10"></div>
+                  <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-black opacity-5 z-10"></div>
+                  <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-black opacity-5 z-10"></div>
+
+                  <Card className="group h-full w-full overflow-hidden bg-white flex flex-col border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 relative z-0">
+                    <CardContent className="p-6 flex flex-col h-full relative z-10">
+                      <h3 className="text-xl font-bold text-black tracking-tight mb-4">
                         {book.title}
                       </h3>
                       <p className="text-gray-600 flex-grow mb-8 leading-relaxed text-sm sm:text-base">
@@ -117,9 +119,9 @@ const FeaturedBooks = () => {
                           className="block"
                         >
                           <Button
-                            className="bg-black border border-black text-white w-full py-3 sm:py-4 font-medium tracking-wide rounded-xl hover:bg-gray-900 hover:border-gray-900 transition-colors duration-200"
+                            className="w-full bg-black hover:bg-gray-800 text-white font-medium rounded-lg transition-all duration-200 py-3 sm:py-4"
                           >
-                            Access Resource &rarr;
+                            Access Resource <span className="ml-2">&rarr;</span>
                           </Button>
                         </a>
                       </div>
