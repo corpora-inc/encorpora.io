@@ -22,31 +22,21 @@ export const Hero: FC = () => (
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
-                Learn Smarter, Not Harder.
+                Pure Learning
             </motion.h1>
 
             {/* Sub-headline */}
             <motion.p
-                className="mt-6 text-2xl text-gray-700"
+                className="mt-5 text-2xl text-gray-600"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
             >
-                Focused books and apps that make learning a joy.
-            </motion.p>
-
-            {/* Trust line */}
-            <motion.p
-                className="mt-4 text-xl text-gray-600"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-            >
-                No ads. No trackers. No wasted time.
+                Focused books and apps.
             </motion.p>
 
             {/* CTAs */}
-            <div className="mt-8 w-full flex flex-col sm:flex-row sm:justify-center gap-4">
+            <div className="mt-6 w-full flex flex-col sm:flex-row sm:justify-center gap-4">
                 <Button
                     asChild
                     variant="outline"
@@ -90,6 +80,15 @@ export const Hero: FC = () => (
                     </Link>
                 </Button>
             </div>
+            {/* Trust line */}
+            <motion.p
+                className="mt-4 text-sm text-gray-500"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+            >
+                No ads. No trackers. No wasted time.
+            </motion.p>
         </div>
     </motion.section>
 );
