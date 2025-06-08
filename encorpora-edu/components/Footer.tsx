@@ -1,5 +1,9 @@
 import { FC } from "react";
-import { FaAccessibleIcon, FaAcquisitionsIncorporated, FaAddressBook, FaConnectdevelop, FaEnvelope, FaFirefox, FaGithub, FaPhone } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaGithub,
+  FaPhone,
+} from "react-icons/fa";
 import { SiGitconnected } from "react-icons/si";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";

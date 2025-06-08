@@ -44,7 +44,7 @@ const WhySection: FC = () => (
         </h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
           Built for speed. Designed for focus. Grounded in respect.<br />
-          That's why learners choose Corpora.
+          That&apos;s why learners choose Corpora.
         </p>
       </div>
 

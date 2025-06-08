@@ -15,7 +15,7 @@ export const AboutSection: FC = () => (
 
       <p className="text-lg text-gray-700 leading-relaxed">
         We believe learning materials should be direct, efficient, and worthy of your attention.
-        That's why every Corpora book and app is engineered to remove distractions - no ads, no trackers, no fluff - so you can focus and enjoy the process.
+        That&apos;s why every Corpora book and app is engineered to remove distractions - no ads, no trackers, no fluff - so you can focus and enjoy the process.
       </p>
 
       <p className="text-base text-gray-500 mt-5">

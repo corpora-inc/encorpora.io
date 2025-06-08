@@ -11,7 +11,7 @@ const FEATURES = [
     title: "True Ownership",
     description: (
       <>
-        Buy a book or app once - it's yours for life, with free updates. No subscriptions, no lock-in, no DRM.
+        Buy a book or app once - it&apos;s yours for life, with free updates. No subscriptions, no lock-in, no DRM.
       </>
     ),
   },
