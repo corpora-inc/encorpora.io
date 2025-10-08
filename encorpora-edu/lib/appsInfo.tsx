@@ -17,7 +17,7 @@ export const APPS_INFO: App[] = [
     id: "1",
     title: "Corpán",
     description:
-      "Learn 12 languages from any language - fully localized, practical sentences, instant audio, and easy switching. Real-world phrases. No ads - just pure learning.",
+      "Learn 17 languages from any language - fully localized, practical sentences, instant audio, and easy switching. Real-world phrases. No ads - just pure learning.",
     icon: "/logos/corpan-logo.webp",
     platforms: [
       {
