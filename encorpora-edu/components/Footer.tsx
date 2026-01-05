@@ -3,6 +3,7 @@ import {
   FaEnvelope,
   FaGithub,
   FaPhone,
+  FaYoutube,
 } from "react-icons/fa";
 import { SiGitconnected } from "react-icons/si";
 
@@ -26,6 +27,11 @@ const Footer: FC = () => {
       icon: <FaGithub />,
       href: "https://github.com/corpora-inc",
       label: "Github",
+    },
+    {
+      icon: <FaYoutube />,
+      href: "https://www.youtube.com/@corp%C3%A1n1",
+      label: "Youtube",
     },
     {
       // icon: <FaAddressBook />,
